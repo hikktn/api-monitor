@@ -1,0 +1,52 @@
+{
+    "socialLinks": [
+        {
+            "name": "GitHub",
+            "href": "https://github.com/hikktn/api-monitor",
+            "icon": "Github"
+        },
+        {
+            "name": "CSDN",
+            "href": "https://blog.csdn.net/qq_41520636?type=blog",
+            "icon": "Csdn"
+        },
+        {
+            "name": "Zhihu",
+            "href": "https://www.zhihu.com/people/he-dao-shang-mi-shi-de-xiao-chuan",
+            "icon": "Zhihu"
+        },
+        {
+            "name": "Donate",
+            "href": "#",
+            "icon": "Heart"
+        }
+    ],
+    "contactInfo": [
+        {
+            "type": "email",
+            "value": "lilin1213457107@gmail.com",
+            "icon": "Mail"
+        },
+        {
+            "type": "wechat",
+            "value": "HYgsmlsl",
+            "icon": "MessageSquare"
+        },
+        {
+            "type": "twitter",
+            "value": "@lilin1213457107",
+            "icon": "Twitter"
+        }
+    ],
+    "aboutPage": {
+        "title": "关于我",
+        "subtitle": "设计师 • 开发者 • 创意工作者",
+        "greeting": "你好，我是 Killian",
+        "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+        "paragraphs": [
+            "一名充满热情的UI/UX设计师和前端开发者，拥有5年的数字产品设计经验。我专注于创造美观、实用且具有影响力的数字体验。",
+            "我相信好的设计不仅仅是视觉上的美观，更重要的是解决实际问题。通过深入理解用户需求，我致力于设计出既美观又功能完善的产品。",
+            "当我不在电脑前工作时，你可能会发现我在探索新的咖啡店、阅读设计书籍，或者在大自然中寻找设计灵感。"
+        ]
+    }
+}
