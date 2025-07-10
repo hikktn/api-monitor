@@ -1,12 +1,17 @@
 import React from 'react';
 import Tile from './Tile';
 import { boardData } from '../data/boardData';
-import { Tile as TileType } from '../types';
 
 const Board: React.FC = () => {
     return (
-        <div className="w-[850px] h-[850px] bg-green-100 border-4 border-black p-4">
-            <div className="grid grid-cols-11 grid-rows-11 h-full w-full">
+        <div className="w-[930px] h-[930px] bg-green-100 border-4 border-black p-4">
+            <div
+                className="grid h-full w-full"
+                style={{
+                    gridTemplateColumns: '80px repeat(9, 1fr) 80px',
+                    gridTemplateRows: '80px repeat(9, 1fr) 80px'
+                }}
+            >
                 {/* Top Row and Corners */}
                 {boardData.slice(20, 31).map((tile, index) => (
                     <div key={tile.id} style={{ gridColumn: 11 - index, gridRow: 1 }}>
