@@ -20,11 +20,11 @@ export const AppleNavbar: React.FC<AppleNavbarProps> = ({ currentPage, onNavigat
     }, []);
 
     const navItems = [
-        { id: 'home', label: '首页', icon: Home },
-        { id: 'blog', label: '博客', icon: BookOpen },
-        { id: 'portfolio', label: '设计稿', icon: Palette },
-        { id: 'about', label: '关于', icon: User },
-        { id: 'contact', label: '联系', icon: Mail },
+        { id: 'Home', label: '首页', icon: Home },
+        { id: 'Blog', label: '博客', icon: BookOpen },
+        { id: 'Portfolio', label: '设计稿', icon: Palette },
+        { id: 'About', label: '关于', icon: User },
+        { id: 'Contact', label: '联系', icon: Mail },
     ];
 
     return (

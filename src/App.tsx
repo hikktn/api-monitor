@@ -10,6 +10,26 @@ import { StoryData } from './components/instagram/InstagramStory';
 import siteData from './data/siteData.json';
 import { Mail, MessageSquare, Twitter, ArrowLeft } from 'lucide-react';
 import { ScrollToTopButton } from './components/common/ScrollToTopButton';
+import MonopolyGame from './features/monopoly-game/components/MonopolyGame';
+
+type Page =
+    | 'Home'
+    | 'Blog'
+    | 'Portfolio'
+    | 'Instagram'
+    | 'About'
+    | 'Contact'
+    | 'Monopoly Game'; // Add new page type
+
+const pageMap: { [key: string]: Page } = {
+    home: 'Home',
+    blog: 'Blog',
+    portfolio: 'Portfolio',
+    instagram: 'Instagram',
+    about: 'About',
+    contact: 'Contact',
+    'monopoly game': 'Monopoly Game',
+};
 
 const contactIcons: { [key: string]: React.ReactNode } = {
     Mail: <Mail className="w-5 h-5 text-blue-500" />,
@@ -18,8 +38,8 @@ const contactIcons: { [key: string]: React.ReactNode } = {
 };
 
 function App() {
-    const [currentPage, setCurrentPage] = useState('home');
-    const [pageHistory, setPageHistory] = useState(['home']);
+    const [activePage, setActivePage] = useState<Page>('Home');
+    const [pageHistory, setPageHistory] = useState<Page[]>(['Home']);
 
     // Sample blog posts data
     const blogPosts: BlogPost[] = [
@@ -66,6 +86,18 @@ function App() {
 
     // Sample design works data
     const designWorks: DesignWork[] = [
+        {
+            id: 'monopoly-game',
+            title: '大富翁游戏（Monopoly）',
+            description: '一个基于React和TypeScript开发的互动式大富翁游戏，采用了等距视角和流畅的动画效果，实现了经典的游戏逻辑。',
+            image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&h=400&fit=crop', // A placeholder image of a board game
+            category: 'Web 应用',
+            tools: ['React', 'TypeScript', 'Zustand', 'Framer Motion'],
+            likes: 500,
+            views: 3250,
+            projectUrl: '#monopoly-game',
+            createdDate: '2024年7月'
+        },
         {
             id: '1',
             title: 'Instagram UI Kit 重设计',
@@ -156,10 +188,15 @@ function App() {
         }
     ];
 
-    const handleNavigate = (page: string) => {
-        if (page !== currentPage) {
-            setPageHistory(prevHistory => [...prevHistory, page]);
-            setCurrentPage(page);
+    const handleNavigate = (pageId: string) => {
+        const normalizedPageId = pageId.toLowerCase();
+        const targetPage = pageMap[normalizedPageId];
+
+        if (targetPage && targetPage !== activePage) {
+            setPageHistory(prevHistory => [...prevHistory, targetPage]);
+            setActivePage(targetPage);
+        } else if (!targetPage) {
+            console.warn(`Invalid page navigation attempt: ${pageId}`);
         }
     };
 
@@ -169,7 +206,7 @@ function App() {
             newHistory.pop();
             const previousPage = newHistory[newHistory.length - 1];
             setPageHistory(newHistory);
-            setCurrentPage(previousPage);
+            setActivePage(previousPage);
         }
     };
 
@@ -180,7 +217,9 @@ function App() {
 
     const handleDesignClick = (work: DesignWork) => {
         if (work.projectUrl === '#instagram') {
-            handleNavigate('instagram');
+            handleNavigate('Instagram');
+        } else if (work.projectUrl === '#monopoly-game') {
+            handleNavigate('Monopoly Game');
         } else {
             console.log('Opening design work:', work.title);
             // 这里可以实现作品详情页面
@@ -188,11 +227,11 @@ function App() {
     };
 
     const renderContent = () => {
-        switch (currentPage) {
-            case 'home':
+        switch (activePage) {
+            case 'Home':
                 return <HeroSection onNavigate={handleNavigate} />;
 
-            case 'blog':
+            case 'Blog':
                 return (
                     <div className="pt-24 pb-16 bg-gray-50 min-h-screen">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -217,7 +256,7 @@ function App() {
                     </div>
                 );
 
-            case 'portfolio':
+            case 'Portfolio':
                 return (
                     <div className="pt-24 pb-16 bg-gray-50 min-h-screen">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -242,7 +281,7 @@ function App() {
                     </div>
                 );
 
-            case 'instagram':
+            case 'Instagram':
                 return (
                     <div className="pt-24 pb-16 bg-gray-50 min-h-screen">
                         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -254,7 +293,7 @@ function App() {
                                     现代化的Instagram界面设计演示
                                 </p>
                                 <button
-                                    onClick={() => handleNavigate('portfolio')}
+                                    onClick={() => handleNavigate('Portfolio')}
                                     className="group inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-100 transition-all duration-300 shadow-sm hover:shadow-md"
                                 >
                                     <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -270,7 +309,7 @@ function App() {
                     </div>
                 );
 
-            case 'about':
+            case 'About':
                 return (
                     <div className="pt-24 pb-16 bg-gray-50 min-h-screen">
                         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,7 +346,7 @@ function App() {
                     </div>
                 );
 
-            case 'contact':
+            case 'Contact':
                 return (
                     <div className="pt-24 pb-16 bg-gray-50 min-h-screen">
                         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -384,6 +423,9 @@ function App() {
                     </div>
                 );
 
+            case 'Monopoly Game':
+                return <MonopolyGame />;
+
             default:
                 return null;
         }
@@ -392,9 +434,11 @@ function App() {
     return (
         <>
             <StagewiseToolbar config={{ plugins: [ReactPlugin] }} />
-            <div className="min-h-screen bg-white">
-                <AppleNavbar currentPage={currentPage} onNavigate={handleNavigate} />
-                {renderContent()}
+            <div className="min-h-screen bg-white dark:bg-gray-900">
+                <AppleNavbar currentPage={activePage} onNavigate={handleNavigate} />
+                <main className="pt-16">
+                    {renderContent()}
+                </main>
                 <ScrollToTopButton onNavigate={handleNavigate} onGoBack={handleGoBack} />
             </div>
         </>
