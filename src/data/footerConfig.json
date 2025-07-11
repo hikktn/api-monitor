@@ -1,0 +1,169 @@
+{
+    "sections": [
+        {
+            "title": "产品与服务",
+            "links": [
+                {
+                    "name": "UI/UX 设计",
+                    "href": "#"
+                },
+                {
+                    "name": "前端开发",
+                    "href": "#"
+                },
+                {
+                    "name": "品牌设计",
+                    "href": "#"
+                },
+                {
+                    "name": "产品策略",
+                    "href": "#"
+                },
+                {
+                    "name": "用户体验咨询",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "资源",
+            "links": [
+                {
+                    "name": "设计博客",
+                    "href": "#"
+                },
+                {
+                    "name": "作品集",
+                    "href": "#"
+                },
+                {
+                    "name": "设计资源",
+                    "href": "#"
+                },
+                {
+                    "name": "开发工具",
+                    "href": "#"
+                },
+                {
+                    "name": "学习指南",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "关于",
+            "links": [
+                {
+                    "name": "个人简介",
+                    "href": "#"
+                },
+                {
+                    "name": "工作经历",
+                    "href": "#"
+                },
+                {
+                    "name": "技能专长",
+                    "href": "#"
+                },
+                {
+                    "name": "合作伙伴",
+                    "href": "#"
+                },
+                {
+                    "name": "媒体报道",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "联系方式",
+            "links": [
+                {
+                    "name": "项目咨询",
+                    "href": "#"
+                },
+                {
+                    "name": "技术支持",
+                    "href": "#"
+                },
+                {
+                    "name": "商务合作",
+                    "href": "#"
+                },
+                {
+                    "name": "媒体采访",
+                    "href": "#"
+                },
+                {
+                    "name": "演讲邀请",
+                    "href": "#"
+                }
+            ]
+        }
+    ],
+    "socialLinks": [
+        {
+            "name": "GitHub",
+            "icon": "Github",
+            "href": "https://github.com/hikktn/api-monitor",
+            "color": "hover:text-gray-900"
+        },
+        {
+            "name": "Twitter",
+            "icon": "Twitter",
+            "href": "https://twitter.com",
+            "color": "hover:text-blue-400"
+        },
+        {
+            "name": "LinkedIn",
+            "icon": "Linkedin",
+            "href": "https://linkedin.com",
+            "color": "hover:text-blue-600"
+        },
+        {
+            "name": "Email",
+            "icon": "Mail",
+            "href": "mailto:lilin1213457107@gmail.com",
+            "color": "hover:text-red-500"
+        }
+    ],
+    "contactInfo": [
+        {
+            "icon": "Mail",
+            "text": "lilin1213457107@gmail.com",
+            "href": "mailto:lilin1213457107@gmail.com"
+        },
+        {
+            "icon": "Phone",
+            "text": "+86 152 2324 5439",
+            "href": "tel:+8615223245439"
+        },
+        {
+            "icon": "MapPin",
+            "text": "重庆市，中国",
+            "href": "#"
+        }
+    ],
+    "legalLinks": [
+        {
+            "name": "隐私政策",
+            "href": "#"
+        },
+        {
+            "name": "使用条款",
+            "href": "#"
+        },
+        {
+            "name": "Cookie 政策",
+            "href": "#"
+        }
+    ],
+    "footerText": {
+        "copyright": "Killian Designer. 保留所有权利。",
+        "location": "设计与开发于重庆",
+        "slogan": "用心创造每一个像素",
+        "quote": "设计不仅仅是外观和感觉，设计是如何工作的。",
+        "quoteAuthor": "Steve Jobs",
+        "techStack": "Made with ♥ using React & TypeScript"
+    }
+}

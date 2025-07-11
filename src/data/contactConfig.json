@@ -1,0 +1,71 @@
+{
+    "title": "让我们开始对话",
+    "description": "无论是项目咨询、技术交流还是创意讨论，我都很乐意与您连接。",
+    "contactMethods": [
+        {
+            "icon": "Mail",
+            "title": "邮箱联系",
+            "description": "项目咨询与商务合作",
+            "value": "lilin1213457107@gmail.comm",
+            "href": "mailto:lilin1213457107@gmail.com",
+            "color": "text-blue-600",
+            "bgColor": "bg-blue-50"
+        },
+        {
+            "icon": "Phone",
+            "title": "电话咨询",
+            "description": "紧急项目与技术支持",
+            "value": "+86 152 2324 5439",
+            "href": "tel:+8615223245439",
+            "color": "text-green-600",
+            "bgColor": "bg-green-50"
+        },
+        {
+            "icon": "MessageCircle",
+            "title": "在线沟通",
+            "description": "实时交流与问题解答",
+            "value": "微信号: HYgsmlsl",
+            "href": "#",
+            "color": "text-purple-600",
+            "bgColor": "bg-purple-50"
+        }
+    ],
+    "workingHours": [
+        {
+            "day": "周一 - 周五",
+            "hours": "9:00 - 18:00"
+        },
+        {
+            "day": "周六",
+            "hours": "10:00 - 16:00"
+        },
+        {
+            "day": "周日",
+            "hours": "休息日"
+        }
+    ],
+    "timezone": {
+        "text": "基于上海时区",
+        "code": "UTC+8"
+    },
+    "responseTime": {
+        "title": "快速响应承诺",
+        "commitments": [
+            {
+                "type": "邮件回复",
+                "time": "24小时内",
+                "color": "text-blue-600"
+            },
+            {
+                "type": "电话回拨",
+                "time": "4小时内",
+                "color": "text-green-600"
+            },
+            {
+                "type": "项目报价",
+                "time": "48小时内",
+                "color": "text-purple-600"
+            }
+        ]
+    }
+}

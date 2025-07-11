@@ -1,0 +1,49 @@
+{
+    "site": {
+        "name": "Killian's Design",
+        "description": "专业的UI/UX设计与前端开发服务",
+        "language": "zh-CN",
+        "baseUrl": "https://designer.com"
+    },
+    "seo": {
+        "title": "Killian's Design - UI/UX设计与前端开发",
+        "description": "专业的用户界面设计、用户体验设计与前端开发服务，为您的产品打造完美的数字体验。",
+        "keywords": [
+            "UI设计",
+            "UX设计",
+            "前端开发",
+            "React",
+            "TypeScript",
+            "设计系统"
+        ]
+    },
+    "theme": {
+        "colors": {
+            "primary": {
+                "light": "#60A5FA",
+                "DEFAULT": "#3B82F6",
+                "dark": "#2563EB"
+            },
+            "secondary": {
+                "light": "#A78BFA",
+                "DEFAULT": "#8B5CF6",
+                "dark": "#7C3AED"
+            }
+        },
+        "fonts": {
+            "sans": "Inter, system-ui, -apple-system, sans-serif",
+            "serif": "Georgia, Cambria, Times New Roman, Times, serif",
+            "mono": "Menlo, Monaco, Consolas, Liberation Mono, monospace"
+        }
+    },
+    "contact": {
+        "email": "hello@designer.com",
+        "phone": "+86 138 0013 8000",
+        "address": "上海市",
+        "social": {
+            "github": "https://github.com",
+            "twitter": "https://twitter.com",
+            "linkedin": "https://linkedin.com"
+        }
+    }
+}

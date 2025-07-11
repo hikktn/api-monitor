@@ -1,0 +1,33 @@
+{
+    "logo": {
+        "text": "JD",
+        "title": "Killian's Design"
+    },
+    "navItems": [
+        {
+            "id": "Home",
+            "label": "首页",
+            "icon": "Home"
+        },
+        {
+            "id": "Blog",
+            "label": "博客",
+            "icon": "BookOpen"
+        },
+        {
+            "id": "Portfolio",
+            "label": "设计稿",
+            "icon": "Palette"
+        },
+        {
+            "id": "About",
+            "label": "关于",
+            "icon": "User"
+        },
+        {
+            "id": "Contact",
+            "label": "联系",
+            "icon": "Mail"
+        }
+    ]
+}
