@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StagewiseToolbar } from '@stagewise/toolbar-react';
 import { ReactPlugin } from '@stagewise-plugins/react';
 import { AppleNavbar } from './components/navigation/AppleNavbar';
@@ -6,6 +6,7 @@ import { HeroSection } from './components/common/HeroSection';
 import { BlogPost } from './components/blog/BlogCard';
 import { DesignWork } from './components/portfolio/DesignCard';
 import { ScrollToTopButton } from './components/common/ScrollToTopButton';
+import { Footer } from './components/common/Footer';
 import MonopolyGame from './features/monopoly-game/components/MonopolyGame';
 import { BlogPage, PortfolioPage, InstagramPage, AboutPage, ContactPage } from './pages';
 
@@ -31,6 +32,14 @@ const pageMap: { [key: string]: Page } = {
 function App() {
     const [activePage, setActivePage] = useState<Page>('Home');
     const [pageHistory, setPageHistory] = useState<Page[]>(['Home']);
+
+    useEffect(() => {
+        // 处理初始路由
+        const path = window.location.pathname;
+        if (path === '/api-monitor/' || path === '/api-monitor') {
+            setActivePage('Home');
+        }
+    }, []);
 
     const handleNavigate = (pageId: string) => {
         const normalizedPageId = pageId.toLowerCase();
@@ -99,6 +108,7 @@ function App() {
                 <main className="pt-16">
                     {renderContent()}
                 </main>
+                <Footer />
                 <ScrollToTopButton onNavigate={handleNavigate} onGoBack={handleGoBack} />
             </div>
         </>
