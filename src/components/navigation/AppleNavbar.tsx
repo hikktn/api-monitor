@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, BookOpen, Palette, User, Mail } from 'lucide-react';
+import { getNavConfig } from '../../utils/config';
+import type { NavConfig } from '../../types/config';
 
 interface AppleNavbarProps {
     currentPage: string;
     onNavigate: (page: string) => void;
 }
 
+// 图标映射
+const iconMap = {
+    Home,
+    BookOpen,
+    Palette,
+    User,
+    Mail,
+};
+
 export const AppleNavbar: React.FC<AppleNavbarProps> = ({ currentPage, onNavigate }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const config: NavConfig = getNavConfig();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,14 +30,6 @@ export const AppleNavbar: React.FC<AppleNavbarProps> = ({ currentPage, onNavigat
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const navItems = [
-        { id: 'Home', label: '首页', icon: Home },
-        { id: 'Blog', label: '博客', icon: BookOpen },
-        { id: 'Portfolio', label: '设计稿', icon: Palette },
-        { id: 'About', label: '关于', icon: User },
-        { id: 'Contact', label: '联系', icon: Mail },
-    ];
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
@@ -37,15 +41,15 @@ export const AppleNavbar: React.FC<AppleNavbarProps> = ({ currentPage, onNavigat
                     {/* Logo */}
                     <div className="flex items-center space-x-3">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">JD</span>
+                            <span className="text-white font-bold text-sm">{config.logo.text}</span>
                         </div>
-                        <span className="font-semibold text-gray-900 text-lg">Killian's Design</span>
+                        <span className="font-semibold text-gray-900 text-lg">{config.logo.title}</span>
                     </div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-1">
-                        {navItems.map((item) => {
-                            const Icon = item.icon;
+                        {config.navItems.map((item) => {
+                            const Icon = iconMap[item.icon as keyof typeof iconMap];
                             const isActive = currentPage === item.id;
 
                             return (
@@ -81,8 +85,8 @@ export const AppleNavbar: React.FC<AppleNavbarProps> = ({ currentPage, onNavigat
                 {isMobileMenuOpen && (
                     <div className="md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-xl">
                         <div className="px-4 py-6 space-y-2">
-                            {navItems.map((item) => {
-                                const Icon = item.icon;
+                            {config.navItems.map((item) => {
+                                const Icon = iconMap[item.icon as keyof typeof iconMap];
                                 const isActive = currentPage === item.id;
 
                                 return (

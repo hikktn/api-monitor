@@ -1,6 +1,6 @@
 import React from 'react';
 import { InstagramPost } from '../../components/instagram/InstagramPost';
-import { instagramPosts } from '../../data/mockData';
+import { instagramPosts } from '../../data/mockConfig.ts';
 import { ArrowLeft } from 'lucide-react';
 
 interface InstagramPageProps {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BlogCard, BlogPost } from '../../components/blog/BlogCard';
-import { blogPosts } from '../../data/mockData';
+import { blogPosts } from '../../data/mockConfig.ts';
 
 interface BlogPageProps {
     onBlogClick: (post: BlogPost) => void;

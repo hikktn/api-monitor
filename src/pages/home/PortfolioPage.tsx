@@ -1,6 +1,6 @@
 import React from 'react';
 import { DesignCard, DesignWork } from '../../components/portfolio/DesignCard';
-import { designWorks } from '../../data/mockData';
+import { designWorks } from '../../data/mockConfig.ts';
 
 interface PortfolioPageProps {
     onDesignClick: (work: DesignWork) => void;
